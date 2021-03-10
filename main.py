@@ -28,7 +28,7 @@ def find_nodes(nodes: Nodes):
         return nodes
     else:
         try:
-            resp = requests.post("http://%s" % next_url, data=nodes.dict())
+            resp = requests.post("http://%s" % next_url, json=nodes.dict())
             resp_json = resp.json()
             nodes = Nodes(**resp_json)
             return nodes
